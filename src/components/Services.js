@@ -28,7 +28,13 @@ const services = [
     emoji: "🛠",
     desc: "Need a bug fixed or UI improved? I got you.",
   },
+  {
+    title: "Consultation & Project Planning",
+    emoji: "🤝",
+    desc: "Helping you plan your site structure, tech stack, and roadmap from the ground up.",
+  },
 ];
+
 
 const Services = () => (
   <div id="services" className="bg-light py-5">

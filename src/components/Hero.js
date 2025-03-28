@@ -1,13 +1,13 @@
 import React from 'react';
 import { Container, Row, Col, Image } from 'react-bootstrap';
-import pfp from '../assets/pfp.jpg';
+import pfp from '../assets/pfp.jpg'; // make sure this path is correct
 
 const Hero = () => {
   return (
     <div className="bg-light py-5" id="about">
       <Container>
         <Row className="align-items-center">
-          <Col md={4} className="text-center">
+          <Col md={4} className="text-center mb-4 mb-md-0">
             <Image 
               src={pfp} 
               roundedCircle 
