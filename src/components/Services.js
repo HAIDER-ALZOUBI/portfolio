@@ -43,13 +43,11 @@ const Services = () => (
       <Row>
         {services.map((service, idx) => (
           <Col key={idx} md={4} className="mb-4">
-            <Card className="h-100 text-center card-hover">
-              <Card.Body>
-                <div style={{ fontSize: '2.5rem' }}>{service.emoji}</div>
-                <Card.Title className="mt-3">{service.title}</Card.Title>
-                <Card.Text>{service.desc}</Card.Text>
-              </Card.Body>
-            </Card>
+            <div className="card-tile card-hover text-center h-100 p-4">
+              <div style={{ fontSize: '2.5rem' }}>{service.emoji}</div>
+              <h5 className="mt-3">{service.title}</h5>
+              <p>{service.desc}</p>
+            </div>
           </Col>
         ))}
       </Row>

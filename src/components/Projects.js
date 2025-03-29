@@ -1,6 +1,5 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
-import './Projects.css';
 
 // Project images (make sure these exist in your /src/assets folder)
 import blackjackImg from '../assets/blackjack.png';
@@ -41,7 +40,7 @@ const Projects = () => (
       <Row>
         {projects.map((project, idx) => (
           <Col md={6} key={idx} className="mb-4">
-            <div className="project-tile d-flex card-hover h-100">
+            <div className="card-tile d-flex card-hover h-100">
               <div className="project-info flex-fill p-4">
                 <h4>{project.title}</h4>
                 <p>{project.desc}</p>

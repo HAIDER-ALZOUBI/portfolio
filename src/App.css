@@ -1,3 +1,12 @@
+:root {
+  --color-accent: #2f007a;
+  --color-blue: #1E3E62;
+  --color-navy: #0B192C;
+  --color-black: #000000;
+
+  --font-primary: 'Outfit', sans-serif;
+}
+
 .App {
   text-align: center;
 }
@@ -25,7 +34,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: var(--color-accent);
 }
 
 @keyframes App-logo-spin {
@@ -38,27 +47,220 @@
 }
 
 section {
-  scroll-margin-top: 80px;
+  padding: 80px 0;
 }
 
-.card-hover {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+body {
+  font-family: var(--font-primary);
+  background-color: #ffffff;
+  color: var(--color-black);
+}
+
+.card-tile {
+  background: white;
+  overflow: hidden;
   border-radius: 12px;
+  border: 1.5px solid var(--color-navy); 
+}
+  
+
+.card-hover {
+  border-radius: 16px;
+  background-color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1.5px solid var(--color-navy);
 }
 
 .card-hover:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transform: scale(1.06);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border: 2px solid var(--color-accent);
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent);
 }
 
 .btn-outline-primary {
-  border-radius: 30px;
-  padding: 8px 20px;
-  font-weight: 500;
-  transition: all 0.3s ease;
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+  border-radius: 12px;
 }
 
 .btn-outline-primary:hover {
-  background-color: #0d6efd;
+  background-color: var(--color-accent);
   color: white;
+}
+
+#services,
+#projects,
+#contact {
+  background-color: white;
+  padding: 80px 0;
+}
+
+h2 {
+  color: var(--color-blue);
+  font-weight: 700;
+}
+
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.project-img-wrapper {
+  width: 150px;
+  min-width: 150px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to left, white 20%, transparent);
+  padding: 10px;
+}
+
+.project-img-wrapper {
+  min-width: 300px;
+  max-width: 300px;
+  padding: 10px;
+  background: linear-gradient(to left, white 20%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-img-wrapper img {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: contain;
+  opacity: 0.8;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  transform: scale(1);
+}
+
+
+.card-hover:hover > .project-img-wrapper > img {
+  transform: scale(1.02);
+  opacity: 1;
+}
+
+.hero-section {
+  background-color: #f9f9f9;
+  padding: 100px 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-img {
+  max-width: 400px;
+  min-width: 275px;
+  border: 3.2px solid var(--color-blue);
+  transition: transform 0.25s ease;
+  margin: 0 auto 0.5rem auto;
+  display: block;
+}
+
+.hero-img:hover {
+  transform: scale(1.1);
+  border: 3.3px solid var(--color-accent);
+}
+
+.hero-socials {
+  margin-top: 0.5rem;
+}
+
+.hero-socials a {
+  color: var(--color-black);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.hero-socials a:hover {
+  color: var(--color-accent);
+  transform: scale(1.2);
+}
+
+.hero-description {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUp 0.8s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scroll-down-link {
+  display: inline-block;
+  color: var(--color-black);
+  text-align: center;
+}
+
+.see-more-text {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #0059ff;
+  transition: transform 0.1s ease, color 0.3s ease, letter-spacing 0.3s ease;
+}
+
+.scroll-arrows {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.arrow-icon {
+  font-size: 1.5rem;
+  color: var(--color-black);
+  opacity: 0;
+  transition: transform 0.3s ease, color 0.3s ease;
+  animation: bounceFade 1.8s infinite ease-in-out;
+}
+
+.scroll-down-link:hover .see-more-text {
+  transform: scale(1.2);
+  letter-spacing: 0.1px;
+  color: var(--color-accent);
+}
+
+
+.delay-1 {
+  animation-delay: 0s;
+}
+.delay-2 {
+  animation-delay: 0.2s;
+}
+.delay-3 {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounceFade {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.45);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
 }
